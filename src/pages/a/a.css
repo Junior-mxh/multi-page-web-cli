@@ -1,0 +1,19 @@
+.bg{
+    background: url("../../common/img/1.jpeg") no-repeat;
+    width:200px;
+    height:200px;
+    transition: transform 1s;
+}
+.bg2{
+    background: #000000;
+}
+.bg3{
+    background: #ffffff;
+}
+:root{
+    --varcolor:red
+}
+
+a{
+    color:var(--varcolor);
+}

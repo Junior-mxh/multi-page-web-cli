@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+<%= require('html-loader!../../layout/header/header.html')  %><!-- html-loader全局注册时会让ejs语法失效-->
+<span class="fa fa-camera-retro"></span>
+<div class="bg">jejejejke</div>
+<a href="./b.html" style="width:100px;height:100px;background-color:red;display:inline-block"></a>
+<img src="<%= require('../../common/img/74.jpeg')%>" alt=""/>
+</body>
+</html>
