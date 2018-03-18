@@ -8,7 +8,7 @@ module.exports = {
 
     devServer: {
         port: 9001,
-        openPage: 'a.html',
+        openPage: 'index.html',
         overlay: true,
         hot: true,
         hotOnly: true

@@ -18,7 +18,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name:'common',
             minChunks:2,
-            chunks:['a','b','c']
+            chunks:['index','b','c']
         }),
         new webpack.optimize.CommonsChunkPlugin({
             names:['manifest'],

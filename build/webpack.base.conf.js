@@ -9,7 +9,7 @@ const cssExtract = new ExtractTextPlugin({
     // allChunk:true
 })
 const generateConfig = env => {
-    const assetsPublicPath = env === 'development' ? '/' : '/mainweb/' //项目根区分环境
+    const assetsPublicPath = env === 'development' ? '/' : '/' //项目根区分环境
     const scriptLoader = ['babel-loader']
             // .concat(env === 'production'
             // ? []

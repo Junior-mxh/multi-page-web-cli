@@ -1,4 +1,22 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')//html生产插件
+
+const pages = [//页面配置写在这里
+    {
+        title:'page index',
+        pageName:'index'
+    },
+    {
+        title:'page bbb',
+        pageName:'b'
+    },
+    {
+        title:'page ccc',
+        pageName:'c'
+    }
+]
+
+
+
 const generatePage = function ({
    title = '',
    entry = '',
@@ -19,35 +37,22 @@ const generatePage = function ({
         ]
     }
 }
-const configPages = [
-    {
-        title:'page A',
-        entry:{
-            a:'./src/pages/a/a'
-        },
-        template:'./src/pages/a/a.html',
-        name:'a',
-        chunks: ['manifest','common','a']
-    },
-    {
-        title:'page B',
-        entry:{
-            b:'./src/pages/b/b'
-        },
-        template:'./src/pages/b/b.html',
-        name:'b',
-        chunks:['manifest','common','b']
-    },
-    {
-        title:'page C',
-        entry:{
-            c:'./src/pages/c/c'
-        },
-        template:'./src/pages/c/c.html',
-        name:'c',
-        chunks:['manifest','common','c']
+const normalize = (title,pageName) =>{
+    const entry = {}
+    const url = './src/pages/'+ pageName +'/'+ pageName
+    entry[pageName] = url
+    return  {
+        title:title,
+        entry:entry,
+        template:url+'.html',
+        name:pageName,
+        chunks: ['manifest','common',pageName]
     }
-]
+}
+const configPages = []
+pages.map(item=>{
+    configPages.push(normalize(item.title,item.pageName))
+})
 const config = []
 configPages.map(item => {
     config.push(generatePage(item))
