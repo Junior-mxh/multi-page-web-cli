@@ -1,3 +1,10 @@
+
+# 说明
+
+1. 页面配置和全局js依赖配置在global.config.js
+
+2. 支持使用es6+语法
+
 # web-cli
 
 >npm -v
