@@ -1,4 +1,5 @@
 var path = require('path')
+const globalConfig = require('./global.config')
 const productionConfig = require('./webpack.prod.conf')//生产环境配置
 const developmentConfig = require('./webpack.dev.conf')//开发环境配置
 const pagesConfig =require('./pages.conf')
@@ -80,7 +81,7 @@ const generateConfig = env => {
     }
     return {
         entry:{
-
+            'dependencies':globalConfig.dependencies
         },
         output:{
             path:path.resolve(__dirname,'../dist'),//项目打包路径

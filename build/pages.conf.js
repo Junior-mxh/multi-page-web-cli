@@ -1,21 +1,7 @@
+const globalConfig = require('./global.config')
 const HtmlWebpackPlugin = require('html-webpack-plugin')//html生产插件
 
-const pages = [//页面配置写在这里
-    {
-        title:'page index',
-        pageName:'index'
-    },
-    {
-        title:'page bbb',
-        pageName:'b'
-    },
-    {
-        title:'page ccc',
-        pageName:'c'
-    }
-]
-
-
+const pages = globalConfig.pages
 
 const generatePage = function ({
    title = '',
@@ -46,7 +32,7 @@ const normalize = (title,pageName) =>{
         entry:entry,
         template:url+'.html',
         name:pageName,
-        chunks: ['manifest','common',pageName]
+        chunks: ['manifest','dependencies','common',pageName]
     }
 }
 const configPages = []

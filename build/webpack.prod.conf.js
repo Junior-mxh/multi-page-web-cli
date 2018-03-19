@@ -21,7 +21,7 @@ module.exports = {
             chunks:['index','b','c']
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            names:['manifest'],
+            names:['dependencies','manifest'],
             minChunks:Infinity
         }),
         // new HtmlInlinkChunkPlugin({
