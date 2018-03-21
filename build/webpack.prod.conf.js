@@ -2,10 +2,13 @@ const webpack = require('webpack')
 // const PurifyWebpack = require('purifycss-webpack')
 // const HtmlInlinkChunkPlugin = require('html-webpack-inline-chunk-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')//打包清除工具
-
+const globalConfig = require('./global.config')
 const path = require('path')
 const glob = require('glob-all')
-
+let chunksArr = []
+globalConfig.pages.forEach(item => {
+    chunksArr.push(item.pageName)
+})
 module.exports = {
     plugins: [
         // new PurifyWebpack({
@@ -18,7 +21,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name:'common',
             minChunks:2,
-            chunks:['index','b','c']
+            chunks:chunksArr
         }),
         new webpack.optimize.CommonsChunkPlugin({
             names:['dependencies','manifest'],
